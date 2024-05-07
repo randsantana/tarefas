@@ -6,7 +6,10 @@ import ComponenteA from './components/MeusComponentes/ComponenteA'
 import LoginStatus from './components/MeusComponentes/LoginStatus'
 import Cabecalho from './components/MeusComponentes/Cabecalho'
 import Rodape from './components/MeusComponentes/Rodape'
-
+import MenuSuperior from './components/MeusComponentes/MenuSuperior'
+import 'react-bootstrap'
+import { BrowserRouter as Router, Route, Routes, Navigate }
+from 'react-router-dom'
 
 
 function App() {
@@ -15,14 +18,11 @@ function App() {
 
   //retorno da função que é a vizualização do cmponente
   return (
-    <>
-      <div>
-        <Cabecalho/>
-        <ComponenteA/>
-        <LoginStatus/>
-        <Rodape/>
-      </div>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<MenuSuperior/>}/>
+      </Routes>
+    </Router>
   )
 }
 
